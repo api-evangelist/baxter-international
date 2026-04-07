@@ -1,7 +1,12 @@
 aid: baxter-international
-url: https://raw.githubusercontent.com/api-evangelist/baxter-international/refs/heads/main/apis.yml
+url: 
+  https://raw.githubusercontent.com/api-evangelist/baxter-international/refs/heads/main/apis.yml
 modified: '2026-03-21'
 apis: []
 common:
   - type: Website
     url: https://www.baxter-international.com
+description: >-
+  Baxter International is a global medical products company that develops, manufactures,
+  and markets products related to hemophilia, kidney disease, immune disorders, and
+  other chronic and acute medical conditions.
