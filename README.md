@@ -1,18 +1,17 @@
-# Baxter International (baxter-international)
+# Baxter International
+
 Baxter International is a global medical products company that develops, manufactures, and markets products related to hemophilia, kidney disease, immune disorders, and other chronic and acute medical conditions. Baxter offers connected device solutions including the DeviceBridge platform for secure medical device data transfer to hospital IT systems such as EMRs, and integrates with healthcare connectivity standards including HL7 FHIR for clinical interoperability.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/baxter-international/refs/heads/main/apis.yml)
+**Website:** https://www.baxter.com/
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Tags
 
-## Tags:
-
- - Healthcare, Medical Devices, Infusion Pumps, Patient Monitoring, Connected Health
+Healthcare, Medical Devices, Infusion Pumps, Patient Monitoring, Connected Health
 
 ## Timestamps
 
 - **Created:** 2026-03-21
-- **Modified:** 2026-04-19
+- **Modified:** 2026-04-21
 
 ## APIs
 

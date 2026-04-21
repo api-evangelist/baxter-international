@@ -1,0 +1,56 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "schema": "https://schema.org/",
+    "fhir": "http://hl7.org/fhir/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "MedicalDevice": {
+      "@id": "schema:MedicalDevice",
+      "@type": "@id"
+    },
+    "DeviceObservation": {
+      "@id": "fhir:Observation",
+      "@type": "@id"
+    },
+    "deviceId": {
+      "@id": "schema:identifier",
+      "@type": "xsd:string"
+    },
+    "deviceType": {
+      "@id": "schema:additionalType",
+      "@type": "xsd:string"
+    },
+    "manufacturer": {
+      "@id": "schema:manufacturer",
+      "@type": "@id"
+    },
+    "modelNumber": {
+      "@id": "schema:model",
+      "@type": "xsd:string"
+    },
+    "serialNumber": {
+      "@id": "schema:serialNumber",
+      "@type": "xsd:string"
+    },
+    "patientId": {
+      "@id": "fhir:Patient.identifier",
+      "@type": "xsd:string"
+    },
+    "observationTime": {
+      "@id": "schema:startDate",
+      "@type": "xsd:dateTime"
+    },
+    "value": {
+      "@id": "schema:value",
+      "@type": "xsd:decimal"
+    },
+    "unit": {
+      "@id": "schema:unitCode",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "schema:status",
+      "@type": "xsd:string"
+    }
+  }
+}

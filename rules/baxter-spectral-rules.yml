@@ -1,0 +1,53 @@
+rules:
+  baxter-auth-required:
+    description: All Baxter DeviceBridge API operations must use authentication.
+    message: Operation must include authentication security requirement.
+    severity: error
+    given: $.paths.*.*.security
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          minItems: 1
+
+  baxter-operation-id-required:
+    description: All Baxter API operations must have an operationId.
+    message: Operation is missing operationId.
+    severity: error
+    given: $.paths.*.*
+    then:
+      field: operationId
+      function: truthy
+
+  baxter-device-id-documented:
+    description: Device endpoints should document device identifier parameters.
+    message: Device endpoint should document deviceId path or query parameter.
+    severity: warn
+    given: $.paths[?(@property.match('device'))].*.parameters
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          minItems: 1
+
+  baxter-patient-id-required:
+    description: Patient data endpoints should require patient identification.
+    message: Patient data endpoint should document patient identifier parameter.
+    severity: error
+    given: $.paths[?(@property.match('patient'))].*.parameters
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: array
+          minItems: 1
+
+  baxter-fhir-content-type:
+    description: FHIR endpoints should produce FHIR-compliant content types.
+    message: FHIR endpoint should produce application/fhir+json content type.
+    severity: warn
+    given: $.paths[?(@property.match('fhir'))].*.responses.200.content
+    then:
+      function: truthy

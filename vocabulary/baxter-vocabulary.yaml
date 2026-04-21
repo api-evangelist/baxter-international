@@ -1,0 +1,50 @@
+vocabulary:
+  name: Baxter International Vocabulary
+  description: >-
+    Key terms and concepts used in Baxter International's connected medical device
+    ecosystem, DeviceBridge platform, and healthcare interoperability standards.
+  terms:
+    - term: DeviceBridge
+      definition: >-
+        Baxter's cloud-based connectivity platform that enables secure data transfer
+        from Baxter medical devices to hospital IT systems including electronic medical
+        records (EMRs) using industry-standard protocols.
+    - term: EMR
+      definition: >-
+        Electronic Medical Record — a digital version of a patient's paper chart
+        containing medical history, diagnoses, medications, treatment plans, and notes.
+    - term: HL7 FHIR
+      definition: >-
+        Health Level Seven Fast Healthcare Interoperability Resources — the modern
+        standard for healthcare data exchange, enabling interoperability between
+        medical devices, EMR systems, and health IT applications.
+    - term: Infusion Pump
+      definition: >-
+        A medical device that delivers fluids, medications, or nutrients into a
+        patient's body in controlled amounts via intravenous, subcutaneous, or
+        enteral routes.
+    - term: Interoperability
+      definition: >-
+        The ability of different healthcare information systems, devices, and applications
+        to communicate, exchange, and use shared data in a coordinated manner.
+    - term: MDDI
+      definition: >-
+        Medical Device Data Integration — the process of connecting bedside medical
+        devices to clinical information systems for automated charting and monitoring.
+    - term: ICU
+      definition: >-
+        Intensive Care Unit — the hospital unit providing intensive care for critically
+        ill patients, a key target for connected device and automation technologies.
+    - term: PCA
+      definition: >-
+        Patient-Controlled Analgesia — an infusion pump mode allowing patients to
+        self-administer controlled pain medication doses within safety limits.
+    - term: BCMA
+      definition: >-
+        Barcode Medication Administration — a safety system requiring nurses to scan
+        barcodes on medications and patient wristbands before administration, integrated
+        with connected infusion pumps to reduce medication errors.
+    - term: Drug Library
+      definition: >-
+        A database embedded in smart infusion pumps containing dosing guidelines,
+        concentration ranges, and alert thresholds for medications to prevent errors.

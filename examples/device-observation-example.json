@@ -1,0 +1,31 @@
+{
+  "@context": "../json-ld/baxter-context.jsonld",
+  "@type": "DeviceObservation",
+  "deviceId": "BXT-SIGMA-SPECTRUM-001234",
+  "deviceType": "Infusion Pump",
+  "manufacturer": {
+    "@type": "schema:Organization",
+    "schema:name": "Baxter International"
+  },
+  "modelNumber": "Sigma Spectrum 35700BAX",
+  "serialNumber": "SPC-2024-001234",
+  "patientId": "MRN-987654321",
+  "observationTime": "2026-04-21T14:32:00Z",
+  "infusionData": {
+    "drugName": "Heparin Sodium",
+    "concentration": "25000 units/500mL",
+    "rate": 12.5,
+    "unit": "mL/hr",
+    "volumeInfused": 125.0,
+    "volumeRemaining": 375.0,
+    "programmedDose": 500,
+    "doseUnit": "units/hr"
+  },
+  "status": "INFUSING",
+  "alarms": [],
+  "fhirReference": {
+    "resourceType": "MedicationAdministration",
+    "subject": "Patient/MRN-987654321",
+    "medication": "Medication/heparin-sodium"
+  }
+}

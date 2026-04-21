@@ -10,6 +10,7 @@ description: >-
   IT systems such as EMRs, and integrates with healthcare connectivity standards
   including HL7 FHIR for clinical interoperability.
 type: Index
+x-type: company
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Healthcare
@@ -19,7 +20,7 @@ tags:
   - Connected Health
 access: 3rd-Party
 created: '2026-03-21'
-modified: '2026-04-19'
+modified: '2026-04-21'
 position: Consumer
 specificationVersion: '0.19'
 apis:
@@ -54,6 +55,14 @@ common:
     url: https://www.baxter.com/privacy-policy
   - type: TermsOfService
     url: https://www.baxter.com/terms-of-use
+  - type: SpectralRules
+    url: rules/baxter-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/baxter-vocabulary.yaml
+  - type: NaftikoCapability
+    url: capabilities/medical-device-connectivity.yaml
+  - type: JSON-LD
+    url: json-ld/baxter-context.jsonld
   - type: Features
     data:
       - name: DeviceBridge Connectivity
