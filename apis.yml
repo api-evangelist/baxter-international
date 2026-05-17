@@ -10,7 +10,7 @@ description: >-
   IT systems such as EMRs, and integrates with healthcare connectivity standards
   including HL7 FHIR for clinical interoperability.
 type: Index
-x-type: company
+kind: company
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Healthcare
@@ -61,7 +61,7 @@ common:
     url: vocabulary/baxter-vocabulary.yaml
   - type: NaftikoCapability
     url: capabilities/medical-device-connectivity.yaml
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/baxter-context.jsonld
   - type: Features
     data:
