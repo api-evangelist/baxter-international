@@ -45,6 +45,8 @@ apis:
         url: https://infusiontechnology.baxter.ca/integrated-clinical-software-solutions
 
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/baxter-healthcare
   - type: Website
     url: https://www.baxter.com/
   - type: Documentation
