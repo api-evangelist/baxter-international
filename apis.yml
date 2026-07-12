@@ -46,6 +46,8 @@ apis:
         url: https://infusiontechnology.baxter.ca/integrated-clinical-software-solutions
 
 common:
+  - type: DomainSecurity
+    url: security/baxter-international-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/baxter-healthcare
   - type: Website
@@ -98,6 +100,8 @@ common:
         description: Partnership with NantHealth to advance digital health technology for medical devices in hospital ICUs.
       - name: AWS IoT
         description: Leverages Amazon Web Services IoT infrastructure for secure cloud connectivity.
+  - type: Blog
+    url: https://www.baxter.com/rss.xml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
