@@ -76,8 +76,6 @@ common:
     url: rules/baxter-spectral-rules.yml
   - type: Vocabulary
     url: vocabulary/baxter-vocabulary.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/medical-device-connectivity.yaml
   - type: JSONLD
     url: json-ld/baxter-context.jsonld
   - type: Features
