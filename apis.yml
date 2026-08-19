@@ -35,7 +35,7 @@ access: 3rd-Party
 created: '2026-03-21'
 modified: '2026-04-21'
 position: Consumer
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
   - aid: baxter-international:device-bridge
     name: Baxter DeviceBridge Platform
