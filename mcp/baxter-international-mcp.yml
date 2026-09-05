@@ -1,0 +1,43 @@
+generated: '2026-09-04'
+method: searched
+source: >-
+  Provider surface search plus live probes of every host in this record (www.baxter.com,
+  baxter.com, support.baxter.com, pro.baxter.com, infusiontechnology.baxter.ca,
+  www.hillrom.com, www.welchallyn.com, api.hillrom.com, developer.hillrom.com)
+provider: Baxter International
+providerId: baxter-international
+status: none
+description: >-
+  Baxter publishes no Model Context Protocol server, hosted or local. No /mcp or /sse endpoint
+  was found on any host, no MCP package exists under any Baxter, Hillrom or Welch Allyn name in
+  npm or PyPI, and Baxter's own developer-facing page routes integrators to a licensing
+  conversation rather than to any callable endpoint. No candidate tool list was derived either,
+  because there is no OpenAPI in this repo to derive one from - deriving tools from marketing
+  prose would be fabrication.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: searched
+tools: []
+evidence:
+  - url: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    status: 200
+    note: >-
+      Baxter's only developer-facing page. States verbatim that SDK / CARDIOPERFECT API access
+      is obtained by contacting the company as an OEM. No endpoint, no protocol, no MCP.
+  - url: https://registry.npmjs.org/-/v1/search?text=welchallyn
+    status: 200
+    note: zero first-party results; same for hillrom, welch-allyn and devicebridge
+  - url: https://www.baxter.com/.well-known/ai-plugin.json
+    status: 200
+    note: soft-404 HTML shell, not a manifest
+pointer_emitted: false
+note: >-
+  No MCPServer pointer is emitted. This file records a completed search that found nothing,
+  which is valid data; asserting an agent surface Baxter does not run would not be.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

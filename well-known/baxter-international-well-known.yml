@@ -1,0 +1,328 @@
+generated: '2026-09-04'
+method: probed
+source: live HTTP probes of every host in apis.yml plus the acquired-brand and support hosts
+provider: Baxter International
+providerId: baxter-international
+description: >-
+  Every named /.well-known path was probed on every host this record knows: the registrable
+  domain and www, the API entry's humanURL host, the support/docs hosts, and the hosts of the
+  brands Baxter acquired (Hillrom 2021, Welch Allyn via Hillrom 2015). Nothing was found.
+  Two failure shapes matter here and are recorded separately: www.baxter.com, pro.baxter.com
+  and infusiontechnology.baxter.ca are Drupal sites that answer HTTP 200 with an HTML page
+  titled "The requested page was not found on our website" for any unknown path - a soft-404,
+  scored as a MISS, not a document. api.hillrom.com and developer.hillrom.com answer HTTP 403
+  with a generic "TURN AROUND!" page on EVERY path including "/", which is a blanket edge
+  block and is therefore no evidence that a surface exists behind it.
+  No pointer of type WellKnown or SecurityTxt is emitted: nothing returned a real document.
+hosts:
+  - host: www.baxter.com
+    note: primary site; Drupal soft-404 (HTTP 200 + "page was not found" body) on unknown paths
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: miss
+        note: 451-byte HTML "404 Not Found" body; not an RFC 9116 document
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: miss
+        note: soft-404, returned the 55KB site shell
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: miss
+        note: soft-404, returned the 55KB site shell
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: miss
+        note: soft-404, returned the 55KB site shell
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: miss
+        note: soft-404, returned the 55KB site shell
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML, not an AgentCard object
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML, not an AgentCard object
+      - path: /llms.txt
+        status: 200
+        file: null
+        result: miss
+        note: 435-byte HTML "404 Not Found" body
+  - host: baxter.com
+    note: apex; Cloudflare origin timeout on every path
+    documents:
+      - path: /.well-known/security.txt
+        status: 522
+        file: null
+        result: miss
+      - path: /.well-known/openid-configuration
+        status: 522
+        file: null
+        result: miss
+      - path: /.well-known/oauth-authorization-server
+        status: 522
+        file: null
+        result: miss
+      - path: /.well-known/api-catalog
+        status: 522
+        file: null
+        result: miss
+      - path: /.well-known/ai-plugin.json
+        status: 522
+        file: null
+        result: miss
+      - path: /llms.txt
+        status: 522
+        file: null
+        result: miss
+  - host: support.baxter.com
+    note: >-
+      the real integration/IT-resources host (www.hillrom.com now redirects here); serves
+      honest HTTP 404s, so these absences are clean
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+        result: miss
+      - path: /llms.txt
+        status: 404
+        file: null
+        result: miss
+  - host: pro.baxter.com
+    note: professional catalogue; soft-404 (HTTP 200 HTML shell) on every unknown path
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /.well-known/openid-configuration
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /.well-known/oauth-authorization-server
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /.well-known/agent.json
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+      - path: /llms.txt
+        status: 200
+        file: null
+        result: miss
+        note: soft-404 HTML
+  - host: infusiontechnology.baxter.ca
+    note: host of the API entry's Documentation pointer; honest 404s
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+        result: miss
+      - path: /llms.txt
+        status: 404
+        file: null
+        result: miss
+  - host: www.hillrom.com
+    note: acquired brand (Hillrom, acquired by Baxter December 2021); honest 404s
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+        result: miss
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+        result: miss
+      - path: /llms.txt
+        status: 404
+        file: null
+        result: miss
+  - host: www.welchallyn.com
+    note: acquired brand (Welch Allyn, via Hillrom); Cloudflare origin DNS error (1016)
+    documents:
+      - path: /.well-known/security.txt
+        status: 530
+        file: null
+        result: miss
+      - path: /.well-known/openid-configuration
+        status: 530
+        file: null
+        result: miss
+      - path: /.well-known/api-catalog
+        status: 530
+        file: null
+        result: miss
+      - path: /.well-known/agent-card.json
+        status: 530
+        file: null
+        result: miss
+      - path: /.well-known/agent.json
+        status: 530
+        file: null
+        result: miss
+      - path: /llms.txt
+        status: 530
+        file: null
+        result: miss
+  - host: api.hillrom.com
+    note: >-
+      resolves (Cloudflare) but answers HTTP 403 with a generic "TURN AROUND!" page on EVERY
+      path including "/". A blanket edge block, not evidence of an API surface.
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+        result: blocked
+      - path: /llms.txt
+        status: 403
+        file: null
+        result: blocked
+  - host: developer.hillrom.com
+    note: same blanket 403 "TURN AROUND!" edge block on every path including "/"
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/oauth-protected-resource
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+        result: blocked
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+        result: blocked
+      - path: /llms.txt
+        status: 403
+        file: null
+        result: blocked
+summary:
+  hosts_probed: 9
+  documents_probed: 62
+  real_documents_found: 0
+  pointer_emitted: false
+related:
+  - >-
+    Baxter DOES publish a machine-consumable security artifact, just not at a well-known path:
+    an OpenPGP public key for encrypted vulnerability reports at
+    https://www.baxter.com/sites/baxtercorpna/files/2026-08/baxter-product-security-gpg-public-key_0xf236f901_public.txt
+    (HTTP 200, text/plain, 3299 bytes). It is recorded in
+    security/baxter-international-vulnerability-disclosure.yml, not here, because it is not
+    served from /.well-known/.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

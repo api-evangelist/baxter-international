@@ -1,0 +1,80 @@
+# Baxter International
+
+> Baxter International is a global medical products company (NYSE: BAX) making infusion
+> systems and pumps, IV fluids and injectable medicines, patient monitoring and diagnostic
+> devices, hospital beds and patient mobility, surgical equipment, and care-communications
+> systems. Its connected-care portfolio moves device data into hospital EMRs. Baxter acquired
+> Hillrom in December 2021, which had acquired Welch Allyn in 2015; the Hillrom and Welch Allyn
+> brands and their integration surfaces are now Baxter's.
+
+## What an agent should know first
+
+Baxter publishes NO public API. There is no OpenAPI, AsyncAPI, GraphQL schema, WSDL, MCP server
+or A2A agent card on any Baxter, Hillrom or Welch Allyn host. Integration surfaces exist and are
+real, but they are obtained by contacting Baxter as an OEM or EMR partner and signing a licence -
+there is no self-serve signup, no API key, no sandbox and no published base URL. An agent cannot
+call Baxter. A human integrator can license an SDK from Baxter and then call devices locally.
+
+Verified on 2026-09-04 by probing /.well-known/security.txt, /.well-known/api-catalog,
+/.well-known/openid-configuration, /.well-known/oauth-authorization-server,
+/.well-known/ai-plugin.json, /.well-known/agent-card.json, /.well-known/agent.json, /llms.txt,
+/openapi.json, /swagger.json and /api-docs across www.baxter.com, baxter.com, support.baxter.com,
+pro.baxter.com, infusiontechnology.baxter.ca, www.hillrom.com, www.welchallyn.com,
+api.hillrom.com and developer.hillrom.com. Zero documents returned.
+
+## Integration surfaces (all OEM/partner licensed)
+
+- [EMR Connectivity](https://support.baxter.com/en/resources/it-resources/emr-connectivity/):
+  the single developer-facing page. States verbatim: "For information on Software Development
+  Kits (SDK), CARDIOPERFECT API as an Original Equipment Manufacturer (OEM), interface
+  development partnerships, or licensing and marketing, please contact us." Baxter reports well
+  over 600 device interfaces and integrations with more than 150 EMR companies.
+- [Welch Allyn Connectivity SDK - Development Best Practices](https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf):
+  the most technical public document Baxter publishes. SDK 3.0.x, Windows only. Three interface
+  technologies - COM API, ActiveX (WA_Vitals3ActiveX, with WA_Vitals2 kept for backward
+  compatibility), and a Web Services API. Sample code in C#, ATL COM, JavaScript, VB.NET, VB6,
+  MFC and Delphi. Transports are USB and Bluetooth to the device; it is a local integration, not
+  a network API. Devices: Spot 4400, Connex Spot Monitor, Connex Vital Signs Monitor, Connex
+  Integrated Wall System, Connex ProBP 3400, Spot Vital Signs LXi.
+- [Current EMR Partners](https://support.baxter.com/en/resources/it-resources/emr-partners/)
+- [Software Downloads](https://support.baxter.com/en/resources/it-resources/software-downloads/):
+  device drivers and software updates; some releases are obtainable only by phoning support.
+- [Contact / access request](https://support.baxter.com/en/contact-us/): the gate.
+
+## Security and disclosure
+
+- [Product Security Process and Bulletins](https://www.baxter.com/about-baxter/governance/product-security):
+  coordinated vulnerability disclosure policy, clinical-safety rules of engagement, researcher
+  acknowledgements, and 25 product security bulletins (ICS advisories and vendor notices).
+- [OpenPGP public key 0xF236F901](https://www.baxter.com/sites/baxtercorpna/files/2026-08/baxter-product-security-gpg-public-key_0xf236f901_public.txt)
+  for encrypted vulnerability reports.
+- [HackerOne program](https://hackerone.com/baxterintl) (handle baxterintl; policy text not
+  readable anonymously).
+- MDS2 security-disclosure statements are provided for Baxter devices via a Baxter representative.
+- No /.well-known/security.txt is served on any host.
+
+## Products and background
+
+- [Connected Care](https://www.baxter.com/what-we-do/connected-care)
+- [Patient Monitoring and Vital Signs Solutions](https://pro.baxter.com/products/diagnostics-examination/patient-monitoring-solutions)
+- [Voalte Nurse Call](https://pro.baxter.com/products/care-communications/voalte-nurse-call)
+- [How Medical Device Connectivity Can Help Deliver Real Clinical Impact](https://www.baxter.com/perspectives/news-insights/medical-device-connectivity-benefits)
+- [Choosing the Right Partner For Your Medical Device EMR Integration Project](https://www.baxter.com/news-insights/choosing-right-partner-medical-device-emr-integration)
+- [News and Insights](https://www.baxter.com/perspectives/healthcare-insights) - [RSS](https://www.baxter.com/rss.xml)
+- [Corporate Governance](https://www.baxter.com/about-baxter/governance)
+- [Terms of Use](https://www.baxter.com/terms-of-use) - [Privacy Policy](https://www.baxter.com/privacy-policy)
+
+## Corrections carried in this profile
+
+- The DeviceBridge platform page previously cited by this record now returns a soft-404
+  (HTTP 200 with a "page was not found" body). DeviceBridge is not named on any live Baxter page
+  found in this pass.
+- A prior claim that Baxter "integrates with HL7 FHIR" is not substantiated by any live
+  first-party technical statement. The only live FHIR mention is a Baxter clinician recommending
+  FHIR as a criterion for choosing an integration partner.
+
+---
+generated: 2026-09-04
+method: generated
+source: apis.yml plus this repo's packages/, conformance/, lifecycle/, security/, well-known/
+  and mcp/ artifacts; no /llms.txt is served by the provider on any host (probed 2026-09-04)

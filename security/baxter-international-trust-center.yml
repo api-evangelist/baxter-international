@@ -1,0 +1,82 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.baxter.com/about-baxter/governance/product-security
+provider: Baxter International
+providerId: baxter-international
+published: true
+type: product-security-and-compliance-disclosure-hub
+description: >-
+  Baxter operates no trust center in the SaaS sense - there is no trust.baxter.com, no
+  self-serve compliance-document portal, and no SOC 2 or ISO 27001 report offered under NDA.
+  What it publishes instead is the medical-device equivalent: a product security programme page
+  carrying a coordinated disclosure policy, a 25-bulletin advisory archive, a statement that
+  MDS2 security-disclosure forms are provided for its devices, and a named set of industry
+  bodies it participates in. This artifact records that hub as it actually exists rather than
+  forcing it into a SaaS trust-center shape.
+url: https://www.baxter.com/about-baxter/governance/product-security
+verified:
+  fetched: '2026-09-04'
+  http_status: 200
+  content_type: text/html
+  title: Product Security Process and Bulletins | Baxter
+programme_pillars:
+  - name: Dedicated Product Security Team
+    description: A global team supporting secure development of new products and sustained
+      maintenance of fielded devices across the product lifecycle.
+  - name: Secure by Design
+    description: Lifecycle security programme spanning Quality, Regulatory, R&D, Privacy and
+      Product Security, stated to be informed by FDA, NIST and ISO and guided by HIPAA and GDPR.
+  - name: Transparent Product Security Communications
+    description: MDS2 statements in the NEMA/HIMSS industry standard format covering audit
+      controls, user identification and authorization, data backup and disaster recovery,
+      malware detection/protection, system and application hardening, and transmission
+      confidentiality and integrity.
+  - name: Strong Industry Partnerships
+    description: Named participation in NH-ISAC, ICS-CERT, AdvaMed, AAMI, HSIN, MDISS, MDSISC
+      and MDIC.
+certifications:
+  - name: ISO 14001:2015
+    scope: Environmental Management Systems
+    status: certified
+    validity: 2023-2026
+    document: https://www.baxter.de/sites/g/files/ebysai1301/files/2024-02/Baxter-International-ISO-14001-2015-and-ISO-45001-2018-Certificate-2023-to-2026.pdf
+    verified:
+      fetched: '2026-09-04'
+      http_status: 200
+      content_type: application/pdf
+      bytes: 940385
+  - name: ISO 45001:2018
+    scope: Occupational Health and Safety Management Systems
+    status: certified
+    validity: 2023-2026
+    document: https://www.baxter.de/sites/g/files/ebysai1301/files/2024-02/Baxter-International-ISO-14001-2015-and-ISO-45001-2018-Certificate-2023-to-2026.pdf
+regulatory_alignment:
+  - HIPAA (United States)
+  - GDPR (European Union)
+  - FDA medical device regulation and cybersecurity guidance
+  - NIST frameworks (named, revision not stated)
+  - ISO standards (named, numbers not stated in the security context)
+documents_on_request:
+  - name: MDS2 (Manufacturer Disclosure Statement for Medical Device Security)
+    how: through a Baxter service representative or the product security mailbox
+  - name: ExactaMix Cybersecurity Guide
+    how: request form on the product security page
+privacy:
+  global_privacy_policy: https://www.baxter.com/privacy-policy
+  hipaa_notice: published in the site footer as "HIPAA Notice of Privacy Practices"
+not_found:
+  - trust.baxter.com (no DNS record)
+  - status.baxter.com (no DNS record)
+  - SOC 2 Type II report or attestation statement
+  - ISO 27001 certification
+  - HITRUST certification
+  - FedRAMP authorization
+  - a self-serve compliance document portal
+note: >-
+  The absences above are recorded because they are what a software buyer would look for, not
+  because a medical device manufacturer is expected to hold them. Baxter's compliance surface is
+  built for hospital biomed and IT procurement (MDS2, ICS advisories, device bulletins), which is
+  the right shape for its market and a different shape from a SaaS trust center.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

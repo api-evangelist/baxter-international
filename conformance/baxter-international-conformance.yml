@@ -1,0 +1,134 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.baxter.com/about-baxter/governance/product-security
+provider: Baxter International
+providerId: baxter-international
+regime: health
+description: >-
+  Standards and compliance posture assembled from Baxter's own live pages. IMPORTANT CAVEAT ON
+  EVIDENCE CLASS: Baxter publishes no machine-readable contract (no OpenAPI, AsyncAPI, GraphQL,
+  WSDL or OGC document was found on any host - see well-known/ and mcp/ in this repo). Every
+  entry below is therefore evidenced by a PUBLISHED PROGRAM STATEMENT on a first-party page,
+  not by a signature read out of a contract. Nothing here was inferred from a spec, because
+  there is no spec. Entries the search could not substantiate are recorded conforms:false
+  rather than omitted, so the absences are visible.
+conformance:
+  - id: mds2
+    name: Manufacturer Disclosure Statement for Medical Device Security (NEMA/HIMSS)
+    conforms: true
+    evidence: https://www.baxter.com/about-baxter/governance/product-security
+    evidence_class: published-program-statement
+    quote: >-
+      "We provide a Manufacturer Disclosure Statement for Medical Device Security (MDS2) in the
+      industry standard format established by the National Electrical Manufacturers Association
+      and the Healthcare Information and Management System Society"
+    note: >-
+      The domain standard for this market. MDS2 is the medical-device sector's structured
+      security-disclosure form - the artefact a hospital's biomed/IT team reads before putting a
+      device on the network. A vendor that ships MDS2 needs no bespoke security questionnaire;
+      one that does not, does. Baxter states it provides MDS2 for its products, but the
+      statements themselves are distributed through Baxter representatives rather than published
+      at a URL, so this is a stated conformance, not a fetched document.
+  - id: hipaa
+    name: Health Insurance Portability and Accountability Act
+    conforms: true
+    evidence: https://www.baxter.com/about-baxter/governance/product-security
+    evidence_class: published-program-statement
+    quote: >-
+      "It is guided by regulations and requirements in the countries where we operate, such as
+      the Health Insurance Portability and Accountability Act (HIPAA) in the U.S."
+  - id: gdpr
+    name: EU General Data Protection Regulation
+    conforms: true
+    evidence: https://www.baxter.com/about-baxter/governance/product-security
+    evidence_class: published-program-statement
+  - id: fda-premarket-cybersecurity
+    name: FDA medical device cybersecurity guidance
+    conforms: true
+    evidence: https://www.baxter.com/about-baxter/governance/product-security
+    evidence_class: published-program-statement
+    note: >-
+      Baxter states its secure-by-design programme is informed by the U.S. Food and Drug
+      Administration, NIST and ISO. No specific FDA guidance revision or NIST framework profile
+      is named on the page, so the claim is recorded at the level Baxter states it.
+  - id: iso-14001
+    name: ISO 14001:2015 Environmental Management Systems
+    conforms: true
+    evidence: https://www.baxter.de/sites/g/files/ebysai1301/files/2024-02/Baxter-International-ISO-14001-2015-and-ISO-45001-2018-Certificate-2023-to-2026.pdf
+    evidence_class: published-certificate
+    note: >-
+      A fetched first-party certificate PDF (HTTP 200, application/pdf, 940KB), valid 2023-2026.
+      Not an information-security certification - recorded because it is the only third-party
+      certification Baxter publishes at a URL.
+  - id: iso-45001
+    name: ISO 45001:2018 Occupational Health and Safety Management Systems
+    conforms: true
+    evidence: https://www.baxter.de/sites/g/files/ebysai1301/files/2024-02/Baxter-International-ISO-14001-2015-and-ISO-45001-2018-Certificate-2023-to-2026.pdf
+    evidence_class: published-certificate
+  - id: hl7-fhir
+    name: HL7 FHIR
+    conforms: false
+    evidence: https://www.baxter.com/news-insights/choosing-right-partner-medical-device-emr-integration
+    evidence_class: editorial-mention
+    quote: >-
+      "Certainly, from an Informatics perspective, you'll want to see modern standards like
+      HL7(R) FHIR(R)" - Dipak Sahoo, RN, Director of Clinical Operations at Baxter
+    note: >-
+      CORRECTION OF A PRIOR CLAIM. This repo's apis.yml previously asserted Baxter "integrates
+      with healthcare connectivity standards including HL7 FHIR". The page that assertion came
+      from now soft-404s, and the only live first-party mention of FHIR is a Baxter clinician
+      recommending it as buyer selection criteria for an integration partner - it does not state
+      that a Baxter product implements a FHIR API. No FHIR CapabilityStatement, base URL or
+      resource list is published anywhere on Baxter's surface. Recorded conforms:false until a
+      first-party technical statement or a fetched CapabilityStatement exists.
+  - id: hl7-v2
+    name: HL7 v2 messaging
+    conforms: false
+    evidence: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    evidence_class: not-substantiated
+    note: >-
+      Baxter states "well over 600 device interfaces and integrations with more than 150 EMR
+      companies", which in this market is normally HL7 v2 traffic, but no page names the standard
+      or a message type. Not asserted on inference.
+  - id: dicom
+    name: DICOM
+    conforms: false
+    evidence: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    evidence_class: not-substantiated
+    note: >-
+      RetinaVue imaging products exist in the portfolio, but no DICOM conformance statement was
+      found published.
+  - id: oauth2
+    name: OAuth 2.0
+    conforms: false
+    evidence: https://www.baxter.com/.well-known/oauth-authorization-server
+    evidence_class: probed-absent
+    note: soft-404 on every host probed; no authorization-server metadata published
+  - id: oidc
+    name: OpenID Connect
+    conforms: false
+    evidence: https://www.baxter.com/.well-known/openid-configuration
+    evidence_class: probed-absent
+  - id: rfc9457
+    name: RFC 9457 Problem Details for HTTP APIs
+    conforms: false
+    evidence: 'no OpenAPI or public HTTP contract published'
+    evidence_class: not-applicable
+  - id: rfc8594
+    name: RFC 8594 Sunset header
+    conforms: false
+    evidence: 'no OpenAPI or public HTTP contract published'
+    evidence_class: not-applicable
+industry_bodies:
+  - Health Information Sharing and Analysis Center (referenced by Baxter as NH-ISAC)
+  - ICS-CERT / CISA
+  - Advanced Medical Technology Association (AdvaMed)
+  - Association for the Advancement of Medical Instrumentation (AAMI)
+  - Homeland Security Information Network (HSIN)
+  - Medical Device Innovation, Safety, and Security Consortium (MDISS)
+  - Medical Device Security Information Sharing Council (MDSISC)
+  - Medical Device Innovation Consortium (MDIC)
+industry_bodies_evidence: https://www.baxter.com/about-baxter/governance/product-security
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

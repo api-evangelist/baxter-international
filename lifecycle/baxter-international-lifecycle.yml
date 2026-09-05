@@ -1,0 +1,73 @@
+generated: '2026-09-04'
+method: searched
+source: https://www.baxter.com/about-baxter/governance/product-security
+provider: Baxter International
+providerId: baxter-international
+description: >-
+  Baxter publishes no API lifecycle policy, because it publishes no public API. What it does
+  operate is a DEVICE lifecycle and security-advisory practice, and that is what is recorded
+  here. Every field a software lifecycle artifact would normally carry - API version scheme,
+  deprecation window, Sunset/Deprecation headers, SLA - is recorded as absent with the probe
+  that established it, rather than left blank.
+api_lifecycle:
+  versioning_scheme: none-published
+  deprecation_policy: none-published
+  sunset_header_rfc8594: false
+  deprecation_header: false
+  breaking_change_notice: none-published
+  sla: none-published
+  evidence:
+    - url: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+      status: 200
+      note: Baxter's only developer-facing page; carries no versioning or deprecation policy.
+    - url: https://support.baxter.com/en/resources/it-resources/
+      status: 200
+      note: IT resources index; software downloads and training, no API lifecycle terms.
+status_page:
+  published: false
+  evidence:
+    - url: https://status.baxter.com
+      status: NXDOMAIN
+      note: no DNS record
+  note: >-
+    No StatusPage pointer is emitted. Baxter runs no public uptime page for any customer-facing
+    service found in this pass.
+product_lifecycle:
+  published: true
+  practice: >-
+    Baxter states its product security programme secures products "throughout their lifecycle,
+    from inception to end of support", and communicates changes through security bulletins and
+    customer communications rather than a dated public changelog.
+  evidence: https://www.baxter.com/about-baxter/governance/product-security
+advisory_stream:
+  published: true
+  url: https://www.baxter.com/about-baxter/governance/product-security
+  format: PDF bulletins, undated in the index listing
+  cadence: event-driven
+  entries_listed: 25
+  note: >-
+    This is the closest thing Baxter publishes to a change feed for its connected products. It is
+    NOT a changelog - entries carry no dates in the index and no version numbers - so no ChangeLog
+    pointer is emitted for it.
+sdk_lifecycle:
+  published: true
+  source: https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf
+  note: >-
+    The Welch Allyn Connectivity SDK document is the one place Baxter publishes a real
+    compatibility and upgrade policy, and it is a good one: it states a documented 2.x-to-3.x
+    upgrade path, explicit backward compatibility (the WA_Vitals2 ActiveX object remains usable
+    under SDK 3.0.x), and a per-device minimum SDK version table. There is no stated end-of-support
+    date for any SDK version.
+  backward_compatibility: documented
+  minimum_versions_published: true
+  end_of_support_dates: none-published
+software_downloads:
+  url: https://support.baxter.com/en/resources/it-resources/software-downloads/
+  status: 200
+  note: >-
+    Dated device software releases are published here (e.g. Welch Allyn Viewer for Digital
+    MacroView 1.1.2, September 2014; Spot Vision Screener 3.1.03-A0001, November 2023). Some
+    updates are obtainable only by telephoning technical support, not by download.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

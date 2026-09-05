@@ -3,12 +3,17 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/baxter-international/refs/heads/main/apis.yml
 name: Baxter International
 description: >-
-  Baxter International is a global medical products company that develops, manufactures,
-  and markets products related to hemophilia, kidney disease, immune disorders, and
-  other chronic and acute medical conditions. Baxter offers connected device solutions
-  including the DeviceBridge platform for secure medical device data transfer to hospital
-  IT systems such as EMRs, and integrates with healthcare connectivity standards
-  including HL7 FHIR for clinical interoperability.
+  Baxter International (NYSE: BAX) is a global medical products company that develops,
+  manufactures and markets infusion systems and pumps, IV fluids and injectable medicines,
+  patient monitoring and diagnostic devices, hospital beds and patient mobility products,
+  surgical equipment and care-communications systems. Its connected-care portfolio moves
+  medical device data into hospital IT systems and electronic medical records; Baxter reports
+  well over 600 device interfaces and integrations with more than 150 EMR companies. Baxter
+  acquired Hillrom in December 2021, which had acquired Welch Allyn in 2015, so the Welch Allyn
+  Connectivity SDK and the CARDIOPERFECT API are now Baxter integration surfaces. Those
+  surfaces are licensed to OEMs and EMR partners under agreement rather than published: as of
+  2026-09-04 no OpenAPI, AsyncAPI, GraphQL schema, WSDL, MCP server or agent card is served on
+  any Baxter, Hillrom or Welch Allyn host.
 type: Index
 kind: company
 deliveryModel:
@@ -44,7 +49,7 @@ tags:
   - Fortune 500
 access: 3rd-Party
 created: '2026-03-21'
-modified: '2026-04-21'
+modified: '2026-09-04'
 position: Consuming
 specificationVersion: '0.23'
 apis:
@@ -56,7 +61,8 @@ apis:
       records (EMRs). It supports clinical data interoperability across Baxter's connected
       device ecosystem including infusion pumps, vital signs monitors, and other patient
       care devices.
-    humanURL: https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices
+    humanURL: https://www.baxter.com/what-we-do/connected-care
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/baxter-international.png
     tags:
       - Healthcare
       - Connected Devices
@@ -64,11 +70,35 @@ apis:
       - EMR Integration
     properties:
       - type: Documentation
-        url: https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices
+        url: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
       - type: Documentation
         url: https://infusiontechnology.baxter.ca/integrated-clinical-software-solutions
+      - type: SDKs
+        url: https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf
+      - type: Integrations
+        url: https://support.baxter.com/en/resources/it-resources/emr-partners/
+      - type: SignUp
+        url: https://support.baxter.com/en/contact-us/
+    x-access: >-
+      OEM / EMR-partner licensing. Baxter's EMR Connectivity page states verbatim: "For
+      information on Software Development Kits (SDK), CARDIOPERFECT API as an Original Equipment
+      Manufacturer (OEM), interface development partnerships, or licensing and marketing, please
+      contact us." There is no self-serve signup, API key, sandbox or published base URL.
+    x-base-url-finding: >-
+      repair-api-bases.py returned verdict "missing" on 2026-09-04. The docs pass confirmed the
+      verdict: no Baxter page names an API host. baseURL is deliberately left unset rather than
+      guessed from the domain.
+    x-pointer-repair: >-
+      The previous humanURL and Documentation pointer,
+      https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices,
+      is a soft-404 - it returns HTTP 200 with a page titled "The requested page was not found on
+      our website". It was the sole source for the DeviceBridge platform claim and for the HL7
+      FHIR claim in this record, and both have been requalified accordingly (see
+      conformance/baxter-international-conformance.yml). Removed 2026-09-04.
 
 common:
+  - type: VulnerabilityDisclosure
+    url: security/baxter-international-vulnerability-disclosure.yml
   - type: DomainSecurity
     url: security/baxter-international-domain-security.yml
   - type: LinkedIn
@@ -76,13 +106,15 @@ common:
   - type: Website
     url: https://www.baxter.com/
   - type: Documentation
-    url: https://www.baxter.com/perspectives/healthcare-insights
+    url: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+  - type: Support
+    url: https://support.baxter.com/
   - type: Security
-    url: https://www.baxter.com/product-security
+    url: https://www.baxter.com/about-baxter/governance/product-security
   - type: PrivacyPolicy
-    url: https://www.baxter.com/privacy-policy
+    url: https://www.baxter.com/global-privacy-policy
   - type: TermsOfService
-    url: https://www.baxter.com/terms-of-use
+    url: https://www.baxter.com/terms-use
   - type: SpectralRules
     url: rules/baxter-spectral-rules.yml
   - type: Vocabulary
@@ -123,6 +155,74 @@ common:
         description: Leverages Amazon Web Services IoT infrastructure for secure cloud connectivity.
   - type: Blog
     url: https://www.baxter.com/rss.xml
+  - type: TrustCenter
+    url: security/baxter-international-trust-center.yml
+  - type: Conformance
+    url: conformance/baxter-international-conformance.yml
+  - type: Packages
+    url: packages/baxter-international-packages.yml
+  - type: SDKs
+    url: packages/baxter-international-packages.yml
+  - type: Lifecycle
+    url: lifecycle/baxter-international-lifecycle.yml
+  - type: LLMsTxt
+    url: llms/baxter-international-llms.txt
+  - type: Plans
+    url: plans/baxter-international-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/baxter-international-rate-limits.yml
+  - type: FinOps
+    url: finops/baxter-international-finops.yml
+  - type: Compliance
+    url: https://www.baxter.com/about-baxter/governance/ethics-compliance
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+
+x-enrichment:
+  date: '2026-09-04'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v3
+
+x-pointer-repairs:
+  checked: '2026-09-04'
+  note: >-
+    www.baxter.com answers HTTP 200 with a page titled "The requested page was not found on our
+    website" for any unknown path, so a status code alone cannot grade a pointer on this host -
+    every URL below was graded by reading the page title, not the code.
+  repaired:
+    - type: PrivacyPolicy
+      was: https://www.baxter.com/privacy-policy
+      now: https://www.baxter.com/global-privacy-policy
+      reason: soft-404 (HTTP 200, "page was not found" body); live path is /global-privacy-policy
+    - type: TermsOfService
+      was: https://www.baxter.com/terms-of-use
+      now: https://www.baxter.com/terms-use
+      reason: soft-404 (HTTP 200, "page was not found" body); live path is /terms-use
+    - type: Documentation
+      was: https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices
+      now: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+      reason: >-
+        soft-404; also the sole source of this record's DeviceBridge and HL7 FHIR claims. The
+        replacement is Baxter's live EMR Connectivity page, the only developer-facing page it serves.
+    - type: Security
+      was: https://www.baxter.com/product-security
+      now: https://www.baxter.com/about-baxter/governance/product-security
+      reason: live but 301-redirects; pointed at the canonical target
+  verified_live:
+    - https://www.baxter.com/
+    - https://www.baxter.com/about-baxter/governance/product-security
+    - https://www.baxter.com/about-baxter/governance/ethics-compliance
+    - https://www.baxter.com/about-baxter/governance/policies-positions
+    - https://www.baxter.com/global-privacy-policy
+    - https://www.baxter.com/terms-use
+    - https://www.baxter.com/what-we-do/connected-care
+    - https://www.baxter.com/rss.xml
+    - https://www.linkedin.com/company/baxter-healthcare
+    - https://support.baxter.com/
+    - https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    - https://support.baxter.com/en/resources/it-resources/emr-partners/
+    - https://support.baxter.com/en/contact-us/
+    - https://infusiontechnology.baxter.ca/integrated-clinical-software-solutions
+    - https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf

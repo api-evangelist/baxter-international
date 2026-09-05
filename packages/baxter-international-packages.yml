@@ -1,0 +1,106 @@
+generated: '2026-09-04'
+method: searched
+source: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+provider: Baxter International
+providerId: baxter-international
+description: >-
+  Baxter's developer-facing client libraries reach integrators through OEM licensing, not
+  a public package registry. The live EMR Connectivity page states verbatim: "For information
+  on Software Development Kits (SDK), CARDIOPERFECT API as an Original Equipment Manufacturer
+  (OEM), interface development partnerships, or licensing and marketing, please contact us."
+  Every public registry was queried on 2026-09-04 and none carries a first-party Baxter,
+  Hillrom or Welch Allyn client library.
+registry_probes:
+  - registry: npm
+    endpoint: https://registry.npmjs.org/-/v1/search
+    queries: [welchallyn, welch-allyn, hillrom, baxter-healthcare, devicebridge]
+    first_party_hits: 0
+    checked: '2026-09-04'
+  - registry: pypi
+    endpoint: https://pypi.org/pypi/<pkg>/json
+    queries: [welchallyn, baxter]
+    first_party_hits: 0
+    status: 404
+    checked: '2026-09-04'
+  - registry: crates.io
+    endpoint: https://crates.io/api/v1/crates?q=welchallyn
+    first_party_hits: 0
+    checked: '2026-09-04'
+  - registry: nuget
+    endpoint: https://azuresearch-usnc.nuget.org/query
+    queries: [welchallyn, hillrom]
+    first_party_hits: 0
+    checked: '2026-09-04'
+packages:
+  - name: Welch Allyn Connectivity SDK
+    official: true
+    registry: none
+    distribution: oem-licensed
+    languages:
+      - C#
+      - VB.NET
+      - VB6
+      - C++ (ATL COM / MFC)
+      - JavaScript
+      - Delphi
+    interfaces:
+      - COM API
+      - ActiveX (WA_Vitals3ActiveX; WA_Vitals2 retained for backward compatibility)
+      - Web Services API
+    platforms:
+      - Windows
+    version: 3.0.x
+    published: null
+    version_source: >-
+      Read from the provider's own "Welch Allyn Connectivity SDK Development Best Practices"
+      document (part number 80019598C, © 2021 Hillrom), which documents the 3.x install path
+      and the 2.x-to-3.x upgrade path. No registry metadata endpoint exists for this package,
+      so an exact release date cannot be established - recorded as null rather than guessed.
+    devices_supported:
+      - name: Spot 4400 Monitor
+        min_sdk: '3.0'
+        transports: [USB]
+      - name: Connex Spot Monitor (CSM)
+        min_sdk: '3.0'
+        transports: [USB, Bluetooth]
+      - name: Connex Vital Signs Monitor (CVSM)
+        min_sdk: '2.3'
+        transports: [USB]
+      - name: Connex Integrated Wall System (CIWS)
+        min_sdk: '2.3'
+        transports: [USB]
+      - name: Connex ProBP 3400
+        min_sdk: '2.3'
+        transports: [USB]
+      - name: Spot Vital Signs LXi
+        min_sdk: '2.3'
+        transports: [USB]
+    docs: https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf
+    access: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    note: >-
+      OEM software product licensed to EMR providers for embedding into commercially available
+      software. It is delivered as a zip install image from a link the licensee is given, plus
+      MSI merge modules for redistribution - there is no public download and no registry entry,
+      so version currency cannot be tracked from outside the licence.
+  - name: CARDIOPERFECT API
+    official: true
+    registry: none
+    distribution: oem-licensed
+    version: null
+    published: null
+    version_source: >-
+      Named on Baxter's live EMR Connectivity page as an OEM offering. Baxter publishes no
+      version, changelog or registry entry for it, so both fields are null - checked, nothing
+      to record.
+    access: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    note: >-
+      Cardiology (ECG / CardioPerfect Workstation) integration API offered to Original
+      Equipment Manufacturers. Access is a sales/licensing conversation, not a download.
+gaps:
+  - No public package registry entry for any first-party Baxter / Hillrom / Welch Allyn SDK.
+  - No public version history or release dates, so SDK decay cannot be measured from outside.
+  - The SDK's "Web Services API" interface is an on-premises component installed on the
+    integrator's own Windows host; no public WSDL or endpoint is published to fetch.
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

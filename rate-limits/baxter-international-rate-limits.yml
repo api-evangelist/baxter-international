@@ -3,47 +3,66 @@ specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
 provider: Baxter International
 providerId: baxter-international
+generated: '2026-09-04'
+method: searched
+source: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
 created: '2026-05-04'
-# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
-# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+modified: '2026-09-04'
+reconciled: true
+limit_count: 0
 tags:
   - Healthcare
   - Medical Devices
   - Connected Health
   - Rate Limiting
-description: Baxter does not publish public rate limits for its DeviceBridge platform. Capacity is provisioned
-  per hospital deployment and tuned to the connected-device fleet size. Numeric values are not asserted
-  here.
-notes: Reconcile with the hospital's DeviceBridge integration runbook or Baxter Connected Care implementation
-  team once available. Do not invent throughput numbers.
-sources:
-  - https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices
-responseCodes:
-  throttled: 429
-limits:
-  - name: Per-tenant ingestion rate
-    scope: hospital-tenant
-    metric: varies
-    limit: 'sized to connected-device fleet; see DeviceBridge integration runbook'
-    notes: DeviceBridge ingests telemetry from infusion pumps and monitors; capacity is provisioned per
-      hospital deployment.
-  - name: HL7 FHIR API throttle
-    scope: integration
-    metric: varies
-    limit: 'see integration runbook'
-    notes: FHIR endpoint capacity is governed by the EMR-side connector and DeviceBridge configuration.
-policies:
-  - name: Backoff Strategy
-    description: Use exponential backoff with jitter on throttled responses. Honor Retry-After when present.
-  - name: Per-Hospital Provisioning
-    description: Capacity is tuned at deployment to the device fleet and EMR throughput, not enforced
-      via a public per-second number.
-  - name: Clinical Safety Constraints
-    description: Connected-device APIs operate inside a regulated clinical environment; integration changes
-      and load profiles must follow the hospital's biomed/IT change-control process.
+description: >-
+  Baxter documents no rate limits, because it publishes no callable HTTP API. No quota, window,
+  burst, throttle status code or rate-limit response header is stated on any Baxter, Hillrom or
+  Welch Allyn page found in this pass. The Welch Allyn Connectivity SDK - the one integration
+  surface with public technical documentation - is a local Windows component talking to a device
+  over USB or Bluetooth, so it has transport constraints rather than API rate limits.
+  limit_count is 0 because that is the measurement.
+notes: >-
+  SUPERSEDES a 2026-05-04 bulk-sweep artifact (method: generated) that listed a "Per-tenant
+  ingestion rate" and an "HL7 FHIR API throttle" with limits reading "see integration runbook",
+  and asserted a 429 throttled response code. None of that was published by Baxter. The entries
+  named a FHIR API this pass could not substantiate anywhere on Baxter's live surface, and the 429
+  was assumed, not observed. All of it has been removed.
+evidence:
+  - url: https://support.baxter.com/en/resources/it-resources/emr-connectivity/
+    status: 200
+    note: only developer-facing page; no limits, headers or throttling terms
+  - url: https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf
+    status: 200
+    note: >-
+      Welch Allyn Connectivity SDK best practices (SDK 3.0.x). Documents concurrency and
+      transport constraints, not rate limits.
+limits: []
+response_headers: []
+documented_constraints:
+  - name: Single-application USB access
+    scope: device
+    description: >-
+      "Multiple applications can't communicate with a single device at the same time. Only one
+      application can open the USB driver at a time." A concurrency constraint on the SDK, stated
+      verbatim in the SDK best-practices document.
+    source: https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf
+  - name: Bluetooth stack and pairing prerequisites
+    scope: device
+    description: >-
+      Bluetooth is supported only on Microsoft Bluetooth stacks; the Connex Spot Monitor requires
+      stack version 2.1 or higher and prior pairing, and its Bluetooth connection does not operate
+      properly when Bluetooth and Ethernet are connected simultaneously.
+    source: https://www.hillrom.com/content/dam/hillrom-aem/us/en/sap-documents/LIT/80019/80019598LITPDF.pdf
+  - name: Clinical change control
+    scope: deployment
+    description: >-
+      Connected-device integrations run inside a regulated clinical environment, so load profile
+      and integration changes are governed by the hospital's biomed/IT change-control process
+      rather than by a published per-second number.
+    source: inferred-operating-context
+    note: >-
+      Recorded as operating context, not as a provider-published limit. No Baxter page states this.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

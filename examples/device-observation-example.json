@@ -1,4 +1,10 @@
 {
+  "_provenance": {
+    "authored_by": "API Evangelist",
+    "method": "generated",
+    "generated": "2026-09-04",
+    "note": "ILLUSTRATIVE ONLY - not a Baxter-published example. Baxter publishes no OpenAPI, no API reference and no example payloads; this document was authored by API Evangelist to exercise json-ld/baxter-context.jsonld. Every identifier, serial number, MRN and clinical value in it is invented. It is deliberately NOT wired to an apis.yml Examples pointer, because pointing at it would credit Baxter with publishing examples it has never published."
+  },
   "@context": "../json-ld/baxter-context.jsonld",
   "@type": "DeviceObservation",
   "deviceId": "BXT-SIGMA-SPECTRUM-001234",
