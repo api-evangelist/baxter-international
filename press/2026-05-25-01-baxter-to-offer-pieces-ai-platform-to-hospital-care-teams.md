@@ -1,7 +1,9 @@
 ---
 title: Baxter to Offer Pieces' AI Platform to Hospital Care Teams
 url: https://www.prnewswire.com/news-releases/baxter-to-offer-pieces-ai-platform-to-hospital-care-teams-302471225.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Baxter International" press release artificial intelligence'
 position: 1
 source: serpapi-google

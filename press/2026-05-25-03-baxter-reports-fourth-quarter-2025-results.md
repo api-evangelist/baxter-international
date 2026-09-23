@@ -1,7 +1,9 @@
 ---
 title: baxter reports fourth-quarter 2025 results
 url: https://www.baxter.com/sites/g/files/ebysai3896/files/2026-02/Baxter_Reports_Fourth-Quarter_Earnings.pdf
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Baxter International" press release artificial intelligence'
 position: 3
 source: serpapi-google

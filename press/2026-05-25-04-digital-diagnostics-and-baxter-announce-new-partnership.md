@@ -1,7 +1,9 @@
 ---
 title: Digital Diagnostics and Baxter Announce New Partnership
 url: https://www.digitaldiagnostics.com/digital-diagnostics-and-baxter-announce-new-partnership/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Baxter International" press release artificial intelligence'
 position: 4
 source: serpapi-google
