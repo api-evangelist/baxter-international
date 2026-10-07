@@ -96,7 +96,6 @@ apis:
 unitEconomics:
   - name: Cost per Connected Device
     metric: platform_cost / connected_devices
-    target: align to per-device clinical / documentation savings
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
