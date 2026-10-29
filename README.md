@@ -64,73 +64,134 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Baxter International is a global medical products company that develops, manufactures, and markets products related to hemophilia, kidney disease, immune disorders, and other chronic and acute medical conditions. Baxter offers connected device solutions including the DeviceBridge platform for secure medical device data transfer to hospital IT systems such as EMRs, and integrates with healthcare connectivity standards including HL7 FHIR for clinical interoperability.
+Baxter International (NYSE: BAX) is a global medical products company that develops, manufactures and markets infusion systems and pumps, IV fluids and injectable medicines, patient monitoring and diagnostic devices, hospital beds and patient mobility products, surgical equipment and care-communications systems. Its connected-care portfolio moves medical device data into hospital IT systems and electronic medical records; Baxter reports well over 600 device interfaces and integrations with more than 150 EMR companies. Baxter acquired Hillrom in December 2021, which had acquired Welch Allyn in 2015, so the Welch Allyn Connectivity SDK and the CARDIOPERFECT API are now Baxter integration surfaces. Those surfaces are licensed to OEMs and EMR partners under agreement rather than published: as of 2026-09-04 no OpenAPI, AsyncAPI, GraphQL schema, WSDL, MCP server or agent card is served on any Baxter, Hillrom or Welch Allyn host.
 
-**Website:** https://www.baxter.com/
+**Areas:** Healthcare · Medical Devices · Infusion Pumps · Patient Monitoring · Connected Health · Fortune 500
 
-## Tags
+## Baxter International on APIs.io
 
-Healthcare, Medical Devices, Infusion Pumps, Patient Monitoring, Connected Health
+Everything profiled for Baxter International is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/baxter-international/](https://apis.io/providers/baxter-international/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (1)
 
-- **Created:** 2026-03-21
-- **Modified:** 2026-04-21
+- [Baxter DeviceBridge Platform](https://apis.io/apis/baxter-international/device-bridge/) — Baxter's DeviceBridge is a cloud-based platform that enables secure data transfer from Baxter medical devices to hospital IT systems including electronic…
 
-## APIs
+### Published properties
 
-### Baxter DeviceBridge Platform
-Baxter's DeviceBridge is a cloud-based platform that enables secure data transfer from Baxter medical devices to hospital IT systems including electronic medical records (EMRs). It supports clinical data interoperability across Baxter's connected device ecosystem including infusion pumps, vital signs monitors, and other patient care devices.
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Human URL:** [https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices](https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices)
+#### JSON-LD (1)
 
-#### Tags:
+Linked-data contexts for the provider's vocabulary.
 
- - Healthcare, Connected Devices, Interoperability, EMR Integration
+- [Baxter Context](https://apis.io/jsonld/baxter-international/baxter-context/)
 
-#### Properties
+#### Vocabulary (1)
 
-- [Documentation](https://www.baxter.com/perspectives/healthcare-insights/turn-insights-action-connected-medical-devices)
-- [Documentation](https://infusiontechnology.baxter.ca/integrated-clinical-software-solutions)
+The provider's domain terms, defined.
 
-## Common Properties
+- [Baxter International Vocabulary](https://apis.io/vocabularies/baxter-international/baxter-vocabulary/)
+
+#### Examples (1)
+
+Example requests and responses.
+
+- [Device Observation Example](https://apis.io/examples/baxter-international/device-observation-example/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Baxter International — baxter rules](https://apis.io/rules/baxter-international/baxter-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Baxter International Domain Security](https://apis.io/security/baxter-international/baxter-international-domain-security/)
+- [Baxter International Trust Center](https://apis.io/security/baxter-international/baxter-international-trust-center/)
+- [Baxter International Vulnerability Disclosure](https://apis.io/security/baxter-international/baxter-international-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Baxter International Plans Pricing](https://apis.io/plans/baxter-international/baxter-international-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Baxter International Rate Limits](https://apis.io/rate-limits/baxter-international/baxter-international-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Baxter International Finops](https://apis.io/finops/baxter-international/baxter-international-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.baxter.com/)
-- [Documentation](https://www.baxter.com/perspectives/healthcare-insights)
-- [Security](https://www.baxter.com/product-security)
-- [PrivacyPolicy](https://www.baxter.com/privacy-policy)
-- [TermsOfService](https://www.baxter.com/terms-of-use)
+- [Documentation](https://support.baxter.com/en/resources/it-resources/emr-connectivity/)
+- [Support](https://support.baxter.com/)
+- [Blog](https://www.baxter.com/rss.xml)
+- [Security](https://www.baxter.com/about-baxter/governance/product-security)
+- [Compliance](https://www.baxter.com/about-baxter/governance/ethics-compliance)
+- [Terms of service](https://www.baxter.com/terms-use)
+- [Privacy policy](https://www.baxter.com/global-privacy-policy)
 
-## Features
+## API Evangelist rating
 
-| Name | Description |
-|------|-------------|
-| DeviceBridge Connectivity | Cloud-based platform enabling secure data transfer from Baxter medical devices to hospital IT systems including EMRs. |
-| EMR Integration | Seamless integration with major electronic medical record systems for automatic data transfer and documentation. |
-| Connected Devices Ecosystem | Supports interoperability across Baxter's portfolio including infusion pumps, vital signs monitors, and pharmacy systems. |
-| HL7 FHIR Support | Supports HL7 FHIR standards for clinical data exchange and healthcare interoperability. |
-| AWS IoT Core Integration | Uses AWS IoT Core for secure device-to-cloud communication and data processing. |
+**Kin Score 29.1** — thin · rubric 0.24.0 · scored 2026-10-17
 
-## Use Cases
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 10.7 |
+| Contract governance | 39.4 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 39.5 |
 
-| Name | Description |
-|------|-------------|
-| Automated IV Documentation | Automatically transfer infusion pump data to the EMR to reduce manual documentation burden on clinicians. |
-| Vital Signs Monitoring | Continuously transmit vital signs data from monitors to hospital systems for real-time clinical awareness. |
-| Clinical Data Interoperability | Enable hospital IT teams to integrate Baxter device data into clinical workflows and analytics platforms. |
-| Pharmacy Integration | Connect pharmacy management systems with infusion therapy devices for medication management. |
+**Agent readiness 2.5** — human-only
 
-## Integrations
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-| Name | Description |
-|------|-------------|
-| Epic EMR | Integration with Epic electronic medical records for automated clinical documentation. |
-| Cerner EMR | Integration with Cerner/Oracle Health for device data exchange and care coordination. |
-| NantHealth | Partnership with NantHealth to advance digital health technology for medical devices in hospital ICUs. |
-| AWS IoT | Leverages Amazon Web Services IoT infrastructure for secure cloud connectivity. |
+**Regulatory alignment 20.3** — Health
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/baxter-international/](https://apis.io/providers/baxter-international/).
 
-**FN:** Kin Lane
+## How this profile is made
 
-**Email:** kin@apievangelist.com
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Baxter International: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/baxter-international/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
